@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61eb53f656ecf146bfc34e029010d78, type: 3}
+  m_Name: ItemTest
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - PortName: Next
+    BaseNodeGuid: d1c88872-3406-4e69-8b29-91e0917d4b2c
+    TargetNodeGuid: 1f37d23a-e0d3-42aa-aab0-70752724b383
+  InteractionNodeData:
+  - nodeName: Item Drop Node
+    NodeType: 3
+    Guid: 1f37d23a-e0d3-42aa-aab0-70752724b383
+    Position: {x: 286, y: 200}
+    Children: []
+    PortNames: []
+    DialogText: 
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+    ItemsToGive:
+    - {fileID: 11400000, guid: 92e2c62c27737274c86948dcd1707489, type: 2}

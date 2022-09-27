@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61eb53f656ecf146bfc34e029010d78, type: 3}
+  m_Name: Open Door Example3
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - PortName: Next
+    BaseNodeGuid: 46d9ab53-6832-465d-bd60-8b112a3b0599
+    TargetNodeGuid: 202d620a-8a49-472b-a31b-e8ca4a9a5e73
+  - PortName: Exit
+    BaseNodeGuid: fe62327b-7214-49fe-8395-8729afac781d
+    TargetNodeGuid: cd601627-bd48-41fd-8e04-ab61ef8be440
+  - PortName: Attempt to Hack the computer (Computer)
+    BaseNodeGuid: 202d620a-8a49-472b-a31b-e8ca4a9a5e73
+    TargetNodeGuid: cd049e7b-1bf7-44d2-89cc-8e6f58a5b741
+  - PortName: Leave the Computer Alone
+    BaseNodeGuid: 202d620a-8a49-472b-a31b-e8ca4a9a5e73
+    TargetNodeGuid: cd601627-bd48-41fd-8e04-ab61ef8be440
+  - PortName: Output
+    BaseNodeGuid: b3a2bbc8-ba6c-4bc2-8f47-6cb0c2bee4f2
+    TargetNodeGuid: 2f6f9a5d-a327-4293-a1cb-6937fea2ef5a
+  - PortName: Continue
+    BaseNodeGuid: 2f6f9a5d-a327-4293-a1cb-6937fea2ef5a
+    TargetNodeGuid: cd601627-bd48-41fd-8e04-ab61ef8be440
+  - PortName: Succeed
+    BaseNodeGuid: cd049e7b-1bf7-44d2-89cc-8e6f58a5b741
+    TargetNodeGuid: b3a2bbc8-ba6c-4bc2-8f47-6cb0c2bee4f2
+  - PortName: Failed
+    BaseNodeGuid: cd049e7b-1bf7-44d2-89cc-8e6f58a5b741
+    TargetNodeGuid: fe62327b-7214-49fe-8395-8729afac781d
+  InteractionNodeData:
+  - nodeName: Your failure is as plain as your lack of deoderaint
+    NodeType: 0
+    Guid: fe62327b-7214-49fe-8395-8729afac781d
+    Position: {x: 994, y: 329}
+    Children: []
+    PortNames: []
+    DialogText: Your failure is as plain as your lack of deoderaint
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+  - nodeName: Finish
+    NodeType: 0
+    Guid: cd601627-bd48-41fd-8e04-ab61ef8be440
+    Position: {x: 1686, y: 231}
+    Children: []
+    PortNames: []
+    DialogText: Finish
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+  - nodeName: 'Door Locked: Access Denied'
+    NodeType: 0
+    Guid: 202d620a-8a49-472b-a31b-e8ca4a9a5e73
+    Position: {x: 232, y: 200}
+    Children: []
+    PortNames: []
+    DialogText: 'Door Locked: Access Denied'
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+  - nodeName: Action Node
+    NodeType: 2
+    Guid: b3a2bbc8-ba6c-4bc2-8f47-6cb0c2bee4f2
+    Position: {x: 1018, y: 57}
+    Children: []
+    PortNames: []
+    DialogText: 
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: Open
+    ActionIdx: 0
+  - nodeName: The door opens!
+    NodeType: 0
+    Guid: 2f6f9a5d-a327-4293-a1cb-6937fea2ef5a
+    Position: {x: 1300, y: 57}
+    Children: []
+    PortNames: []
+    DialogText: The door opens!
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+  - nodeName: Skill Check Node
+    NodeType: 1
+    Guid: cd049e7b-1bf7-44d2-89cc-8e6f58a5b741
+    Position: {x: 663, y: 176}
+    Children: []
+    PortNames: []
+    DialogText: 
+    SkillType: Computer
+    SkillDifficulty: 0.25
+    ActionName: 
+    ActionIdx: 0

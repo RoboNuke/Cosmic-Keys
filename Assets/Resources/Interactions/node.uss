@@ -1,0 +1,9 @@
+DialogNode #title {
+    background-color: rgba(29, 115, 57, 0.91);
+}
+SkillCheckNode #title {
+	background-color: rgba(153, 76, 0, 0.91);
+}
+ActionNode #title {
+	background-color: rgba(102, 0, 0, 0.91);	
+}

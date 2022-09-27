@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61eb53f656ecf146bfc34e029010d78, type: 3}
+  m_Name: NPC Dialolg Test
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - PortName: Next
+    BaseNodeGuid: e9854622-11eb-446c-9707-1d5709e1ddbb
+    TargetNodeGuid: 9422f4e3-c68b-4c05-8ae2-83f2258aa21b
+  - PortName: Finish
+    BaseNodeGuid: 2d6a65fd-5e53-47ae-87a0-8055915a928b
+    TargetNodeGuid: c4a2ba98-de5d-40f8-9a3d-a928784c93cf
+  - PortName: Finish
+    BaseNodeGuid: e2e0af6c-d41b-4f52-8e4e-071ace84b117
+    TargetNodeGuid: c4a2ba98-de5d-40f8-9a3d-a928784c93cf
+  - PortName: I'm not into to dudes, so I can't be a sailor
+    BaseNodeGuid: 9422f4e3-c68b-4c05-8ae2-83f2258aa21b
+    TargetNodeGuid: 2d6a65fd-5e53-47ae-87a0-8055915a928b
+  - PortName: Ready to cowboy up captain?
+    BaseNodeGuid: 9422f4e3-c68b-4c05-8ae2-83f2258aa21b
+    TargetNodeGuid: e2e0af6c-d41b-4f52-8e4e-071ace84b117
+  InteractionNodeData:
+  - nodeName: Sorry, My Bad
+    NodeType: 0
+    Guid: 2d6a65fd-5e53-47ae-87a0-8055915a928b
+    Position: {x: 660, y: 118}
+    Children: []
+    PortNames: []
+    DialogText: Sorry, My Bad
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+    ItemsToGive: []
+  - nodeName: Yippi Skippy!
+    NodeType: 0
+    Guid: e2e0af6c-d41b-4f52-8e4e-071ace84b117
+    Position: {x: 670, y: 262}
+    Children: []
+    PortNames: []
+    DialogText: Yippi Skippy!
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+    ItemsToGive: []
+  - nodeName: Greetings Sailor!
+    NodeType: 0
+    Guid: 9422f4e3-c68b-4c05-8ae2-83f2258aa21b
+    Position: {x: 219, y: 189}
+    Children: []
+    PortNames: []
+    DialogText: Greetings Sailor!
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+    ItemsToGive: []
+  - nodeName: Finish
+    NodeType: 0
+    Guid: c4a2ba98-de5d-40f8-9a3d-a928784c93cf
+    Position: {x: 983, y: 200}
+    Children: []
+    PortNames: []
+    DialogText: Finish
+    SkillType: 
+    SkillDifficulty: 0
+    ActionName: 
+    ActionIdx: 0
+    ItemsToGive: []

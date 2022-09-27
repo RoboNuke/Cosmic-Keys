@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+  [SerializeField] float rotationSensitivity;
+
+  private Transform parent;
+  private Transform Obstruction;
+  private Stack<GameObject> obstructions = new Stack<GameObject>();
+
+  private float width = 4f;
+  private float height = 4f;
+  private void Start()
+  {
+    parent = transform.parent;
+    Obstruction = parent;
+  }
+  
+  private void Update()
+  {
+    float rotationInput = Input.GetAxis("Horizontal");
+    //Debug.Log(rotationInput);
+    transform.RotateAround(parent.position, Vector3.up, rotationInput * rotationSensitivity * Time.deltaTime);
+    //CheckObstructedView();
+    CheckObstructedView2();
+  }
+  private void CheckObstructedView2()
+  {
+    RaycastHit[] hits;
+    Vector3 camToPlayer = parent.position - transform.position;
+    Debug.DrawRay(transform.position, camToPlayer * 20, Color.yellow, 0.1f);
+    hits = Physics.RaycastAll(transform.position, camToPlayer, 200.0f);
+    //Debug.Log(hits.Length);
+    if (hits.Length > obstructions.Count)
+    {
+      for (int i = obstructions.Count; i < hits.Length; i++)
+      {
+        GameObject obs = hits[i].collider.gameObject;
+        makeClear(ref obs);
+        obstructions.Push(obs);
+      }
+    }
+    else if (hits.Length < obstructions.Count)
+    {
+      while(obstructions.Count > hits.Length)
+      {
+        GameObject obs = obstructions.Pop();
+        //makeVisiable(ref obs);
+      }
+    }
+
+  }
+  
+  private void makeClear(ref GameObject obj)
+  {
+    obj.GetComponent<MeshRenderer>().shadowCastingMode =
+      UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+    Debug.Log("Made Something Clear");
+  }
+  
+  private void makeVisiable(ref GameObject obj)
+  {
+    obj.GetComponent<MeshRenderer>().shadowCastingMode =
+      UnityEngine.Rendering.ShadowCastingMode.On;
+    Debug.Log("Made something visable");
+  }
+      
+  private void CheckObstructedView()
+  {
+    RaycastHit hit;
+    Vector3 toPos = parent.position;
+        if (Obstruction.gameObject.GetComponent<MeshRenderer>() != null)
+        {
+          //Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode =
+          //  UnityEngine.Rendering.ShadowCastingMode.On;
+        }
+        if (Physics.Raycast(transform.position, toPos - transform.position, out hit, 4.5f))
+        {
+          if (hit.collider.gameObject.tag != "Player")
+          {
+            Debug.DrawRay(transform.position, (toPos - transform.position) * hit.distance, Color.yellow);
+            Obstruction = hit.transform;
+            Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode =
+              UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+          }
+          else
+          {
+            Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode =
+              UnityEngine.Rendering.ShadowCastingMode.On;
+          }
+        }
+  }
+}
